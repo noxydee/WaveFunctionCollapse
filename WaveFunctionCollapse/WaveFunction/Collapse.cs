@@ -17,6 +17,7 @@
 
         private int outputSizeX2, outputSizeY2;
         private int tileSize2;
+        private int totalCounter = 0;
 
         TileGridCell[,] grid { get; set; }
 
@@ -92,7 +93,8 @@
             TileGridCell currentCell = grid[startingX, startingY];
             currentCell.PickedTile = currentCell.GetRandomTile();
             currentCell.Collapsed = true;
-            //Draw(grid, $"output/{totalCounter}.jpeg");
+            Draw(grid, $"output/{totalCounter}.jpeg");
+            totalCounter++;
 
             if (currentCell.PickedTile != null)
             {
